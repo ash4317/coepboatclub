@@ -1,0 +1,120 @@
+.event {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
+}
+
+#moon-punt {
+    background-color: #000000;
+    background-image: linear-gradient(black, #152238);
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#moon {
+    margin-top: 30%;
+    width: 100%;
+}
+
+#deepotsav {
+    background-color: #000000;
+    background-image: linear-gradient(black, orange);
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#deepotsav .content {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.deep-photo {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#moon-punt .header, #deepotsav .header, #jalmaitri .header {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#gym {
+    background-color: #000000;
+    background-image: linear-gradient(#152238, black);
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+#gym .header {
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#gym-photo, #jalmaitri-photo {
+    width: 100%;
+}
+
+#jalmaitri {
+    background-color: #100F31;
+    color: white;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.jalmaitri-photo {
+    width: 100%;
+}
+
+.content {
+    font-size: 20px;
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.post {
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+    #deepotsav .content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #moon-punt .header, #gym .header, #deepotsav .header, #jalmaitri .header {
+        font-size: 30px;
+    }
+
+    #moon-punt .content, #gym .content, #deepotsav .content, #jalmaitri .content {
+        font-size: 15px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .post {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #moon {
+        display: none;
+    }
+
+    #gym-photo {
+        margin-top: 0;
+    }
+}

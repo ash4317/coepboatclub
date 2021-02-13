@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>COEP Boat Club | About</title>
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--My own CSS-->
+        <link rel="stylesheet" href="css/common_style.css">
+        <link rel="stylesheet" href="css/sports.css">
+        <!--My own JS-->
+        <script src="js/sports.js"></script>
+        <!--Bootstrap JS-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <style>
+        .logo {
+            background-color:white; width: 50%; max-width: 200px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .logo {
+                /* change size of logo */
+                max-width: 150px;
+                width: 30%;
+            }
+
+            .dashboard {
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        window.addEventListener('scroll', fixDashboard);
+        window.addEventListener('scroll', addTopBtn);
+        
+        function addTopBtn() {
+            var scroll = document.documentElement.scrollTop;
+            var btn = document.querySelector(".top-btn");
+            if(scroll > 20) {
+                btn.style.opacity = "1";
+            }
+            else {
+                btn.style.opacity = "0";
+            }
+        }
+        
+        function goToTop() {
+            document.documentElement.style.scrollBehavior = "smooth";
+            document.documentElement.scrollTop = 0;
+        }
+        
+        function fixDashboard() {
+            var scroll = document.documentElement.scrollTop;
+            z = document.querySelector(".row");
+            if (scroll >= 201) {
+                z.classList.add("sticky")
+            }
+            else {
+                z.classList.remove("sticky");
+            }
+        }
+        
+        function saveOffset() {
+            var offset = document.querySelector(".col-xl-1").offsetTop;
+            localStorage.setItem("dashboard_top", offset);
+        }
+        
+        function showNav() {
+            document.querySelector(".full-nav").style.display = "block";
+        }
+        
+        function closeNav() {
+            document.querySelector(".full-nav").style.display = "none";
+        }
+    </script>
+    
+    </head>
+
+    <body style="overflow-x: hidden;" class="bg-white" onscroll="scrollFunc()">
+
+        <!-- Dashboard -->
+        <nav class="container-fluid dashboard text-light" style="padding-top: 20px;">
+            <a href="home.html"><img class="logo" src="images/bclogo.png"></a><span id="bar" onclick="showNav()">&#8801;</span>
+            <hr class="hr">
+            <div class="row" style="background-color: #23395d; z-index: 1;">
+                <div class="col-xl-2 text-center"></div>
+                <div class="col-xl-1 text-center">
+                    <a href="home.html" class="dash-link">
+                    HOME
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center current">
+                    <a href="sports.htm" class="dash-link">
+                    SPORTS
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="events.htm" class="dash-link">
+                    EVENTS
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="ikcc.htm" class="dash-link">
+                    IKCC                    
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="commitee.htm" class="dash-link">
+                    COMMITTEE
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="gallery.htm" class="dash-link">
+                    GALLERY                   
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="#" class="dash-link">
+                    REGATTA
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="contact.htm" class="dash-link">
+                    CONTACT US
+                    </a>
+                </div>
+                <div class="col-xl-2 text-center"></div>
+            </div>
+        </nav>
+
+        <div class="full-nav text-center">
+            <span id="closebtn" onclick="closeNav()">&times;</span>
+            <div class="nav-content">
+                <a href="home.html">Home</a>
+                <a href="sports.htm" class="current">Sports</a>
+                <a href="events.htm">Events</a>
+                <a href="ikcc.htm">IKCC</a>
+                <a href="commitee.htm">Committee</a>
+                <a href="gallery.htm">Gallery</a>
+                <a href="#">Regatta</a>
+                <a href="contact.htm">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="jumbotron text-center bg-white text-dark" style="padding-top: 10px;">
+            <span class="header">SPORTS</span><hr><br>
+            <div class="container">
+                <div class="row fadeIn" id="rowing">
+                    <div class="col-lg-5">
+                        <img id="rowing-img" src="images/rowing.jpg">
+                    </div>
+                    <div class="col-lg-7">
+                        <div>
+                            <span class="header text-center"><img src="images/rowing_logo.jpg" style="width: 10%;"> Rowing <img src="images/rowing_logo.jpg" style="width: 10%;"></span><br>
+                            <p class="info text-left">
+                                Rowing is the act of propelling a boat using the motion of oars in the water by displacing water to propel the boat forward. Rowing and paddling are similar. However, rowing requires oars to have a mechanical connection with the boat, while paddles (used for paddling) are hand-held and have no mechanical connection.
+                                <br>The sport can be either recreational for enjoyment or fitness, or competitive, when athletes race against each other in boats.
+                                <br><br>There are mainly two types of rowing - i) Sculling ii) Sweep rowing. In sculling, every rower has two oars while in sweep rowing, every rower has only one oar.
+                                <br>Rowing races are mainly of 1000m and 2000m.<br><br>
+                                <span class="sec">
+                                    Rowing Secretary<br>Raibbhann Sarnobbat
+                                </span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <br>
+                <div class="row" id="kayaking">
+                    <div class="col-lg-5">
+                        <img id="kayaking-img" src="images/kayaking.jpg">
+                    </div>
+                    <div class="col-lg-7">
+                        <div>
+                            <span class="header text-center"><img src="images/kayaking_logo.png" style="width: 10%;"> Kayaking <img src="images/kayaking_logo.png" style="width: 10%;"></span><br>
+                            <p class="info text-left">
+                                Kayaking is the use of a kayak for moving across water. It is distinguished from canoeing by the sitting position of the paddler and the number of blades on the paddle. A kayak is a low-to-the-water, canoe-like boat in which the paddler sits facing forward, legs in front, using a double-bladed paddle to pull front-to-back on one side and then the other in rotation.
+                                <br>In competition the number of paddlers within a boat is indicated by a figure besides the type of boat; K1 signifies an individual kayak race, K2 pairs, and K4 four-person crews. Kayak races are held in many competitions where crews/individuals race over 200m, 500m or 1000m.
+                                <br><br>
+                                <span class="sec">
+                                    Kayaking and Canoeing Secretary<br>Tejas Ranka
+                                </span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <br>
+                <div class="row" id="canoeing">
+                    <div class="col-lg-5">
+                        <img id="canoeing-img" src="images/canoeing.JPG">
+                    </div>
+                    <div class="col-lg-7">
+                        <div>
+                            <span class="header text-center"><img src="images/canoeing_logo.jpg" style="width: 10%;"> Canoeing <img src="images/canoeing_logo.jpg" style="width: 10%;"></span><br>
+                            <p class="info text-left">
+                                Canoeing is an activity which involves paddling a canoe with a single-bladed paddle. In sprint canoeing, the paddler is in a standing position (lunge position). Hence, this sport tests the stability as well as power of the athlete. Just like in Kayaking, canoeing boats are also of 3 types - C1, C2, C4 where the figures 1, 2, 4 indicate the number of paddlers in a single boat.
+                                <br>In various competitions, canoeing races are also of 200m, 500m or 1000m.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="social">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    Address:<br>
+                    College of Engineering Pune<br>
+                    Wellesly Road, Shivajinagar<br>
+                    Pune, Maharashtra - 411005
+                </div>
+                <div class="col-md-4 text-center"><br>
+                    Follow us on:<br><br>
+                    <a href="#" class="fa fa-facebook"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="images/bclogo.png" style="width: 40%; background-color: white;">
+                </div>
+            </div>
+        </div><br><br>
+    
+        <div class="container-fluid footer text-center">
+            &copy; 2021 COEP Boat Club. Site developed by BMC Web Development Team
+        </div>
+
+        <button type="button" class="top-btn" onclick="goToTop()">^</button>
+
+    </body>
+</html>

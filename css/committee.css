@@ -1,0 +1,135 @@
+.name {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.mail {
+    font-size: 13px;
+}
+
+.col-md-4 {
+    position: relative;
+}
+
+.header {
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.committee {
+    padding-top: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.overlay {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    border-radius: 5%;
+    border: solid thin black;
+}
+
+.contact-no {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    display: none;
+}
+
+.overlay:hover img {
+    opacity: 0.2;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+
+.overlay:hover .contact-no {
+    display: inline;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-no {
+        font-size: 18px;
+        top: 25%;
+        left: 28%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contact-no {
+        top: 23%;
+        left: 25%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contact-no {
+        font-size: 15px;
+        font-weight: 700;
+        top: 25%;
+        left: 25%;
+    }
+
+    #bmc {
+        font-size: 29px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-no {
+        font-size: 20px;
+        font-weight: 900;
+        top: 30%;
+        left: 30%;
+    }
+
+    #bmc {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #bmc {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    #bmc {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .contact-no {
+        font-size: 20px;
+        font-weight: 900;
+        top: 30%;
+        left: 25%;
+    }
+
+    .name {
+        font-size: 25px;
+    }
+
+
+}
+
+@media screen and (max-width: 340px) {
+    .name {
+        font-size: 20px;
+    }
+}
+
+#content-2 {
+    display: none;
+}
+
+.tabs {
+    padding: 10px;
+    width: 100%;
+}

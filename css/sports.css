@@ -1,0 +1,73 @@
+.header {
+    font-size: 60px;
+}
+
+#rowing-img {
+    width: 100%;
+    height: 500px;
+    padding-top: 10px;
+}
+
+#kayaking-img {
+    width: 100%;
+    height: 460px;
+    padding-right: 30px;
+    padding-top: 100px;
+}
+
+#canoeing-img {
+    width: 100%;
+    height: 400px;
+    padding-top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    #rowing-img, #kayaking-img, #canoeing-img {
+        height: auto;
+        padding-top: 10px;
+        display: block;
+        width: 90%;
+        margin-left: 5%;
+        padding-right: 0;
+    }
+
+    .header {
+        font-size: 1.5em;
+    }
+}
+
+.info {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.sec {
+    font-weight: bold;
+}
+
+#kayaking, #canoeing {
+    opacity: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+#rowing {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 600px) {
+    .info {
+        font-size: 14px;
+    }
+
+    .header {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .header {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>COEP Boat Club | Committee</title>
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--My own CSS-->
+        <link rel="stylesheet" href="css/common_style.css">
+        <link rel="stylesheet" href="css/committee.css">
+        <!--Bootstrap JS-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <style>
+        .logo {
+            background-color:white; width: 50%; max-width: 200px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .logo {
+                /* change size of logo */
+                max-width: 150px;
+                width: 30%;
+            }
+
+            .dashboard {
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        window.addEventListener('scroll', fixDashboard);
+        window.addEventListener('scroll', addTopBtn);
+        
+        function addTopBtn() {
+            var scroll = document.documentElement.scrollTop;
+            var btn = document.querySelector(".top-btn");
+            if(scroll > 20) {
+                btn.style.opacity = "1";
+            }
+            else {
+                btn.style.opacity = "0";
+            }
+        }
+        
+        function goToTop() {
+            document.documentElement.style.scrollBehavior = "smooth";
+            document.documentElement.scrollTop = 0;
+        }
+        
+        function fixDashboard() {
+            var scroll = document.documentElement.scrollTop;
+            z = document.querySelector(".row");
+            if (scroll >= 201) {
+                z.classList.add("sticky")
+            }
+            else {
+                z.classList.remove("sticky");
+            }
+        }
+        
+        function saveOffset() {
+            var offset = document.querySelector(".col-xl-1").offsetTop;
+            localStorage.setItem("dashboard_top", offset);
+        }
+        
+        function showNav() {
+            document.querySelector(".full-nav").style.display = "block";
+        }
+        
+        function closeNav() {
+            document.querySelector(".full-nav").style.display = "none";
+        }
+
+        function show(id) {
+            if(id == "1") {
+                document.getElementById("content-2").style.display = "none";
+                document.getElementById("content-1").style.display = "block";
+                document.getElementById("2").className = "btn btn-outline-dark tabs";
+                document.getElementById("1").className = "btn btn-outline-dark tabs active";
+            }
+            else {
+                document.getElementById("content-1").style.display = "none";
+                document.getElementById("content-2").style.display = "block";
+                document.getElementById("1").className = "btn btn-outline-dark tabs";
+                document.getElementById("2").className = "btn btn-outline-dark tabs active";
+            }
+        }
+    </script>
+    
+    </head>
+
+    <body style="overflow-x: hidden;">
+
+        <nav class="container-fluid dashboard text-light" style="padding-top: 20px;">
+            <a href="home.html"><img class="logo" src="images/bclogo.png"></a>
+            <span id="bar" onclick="showNav()">&#8801;</span>
+            <hr class="hr">
+            <div class="row" style="background-color: #23395d; z-index: 1;">
+                <div class="col-xl-2 text-center"></div>
+                <div class="col-xl-1 text-center">
+                    <a href="home.html" class="dash-link">
+                    HOME
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="sports.htm" class="dash-link">
+                    SPORTS
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="events.htm" class="dash-link">
+                    EVENTS
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="ikcc.htm" class="dash-link">
+                    IKCC                    
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center current">
+                    <a href="commitee.htm" class="dash-link">
+                    COMMITTEE
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="gallery.htm" class="dash-link">
+                    GALLERY                   
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="#" class="dash-link">
+                    REGATTA
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="contact.htm" class="dash-link">
+                    CONTACT US
+                    </a>
+                </div>
+                <div class="col-xl-2 text-center"></div>
+            </div>
+        </nav>
+
+        <div class="full-nav text-center">
+            <span id="closebtn" onclick="closeNav()">&times;</span>
+            <div class="nav-content">
+                <a href="home.html">Home</a>
+                <a href="sports.htm">Sports</a>
+                <a href="events.htm">Events</a>
+                <a href="ikcc.htm">IKCC</a>
+                <a href="commitee.htm" class="current">Committee</a>
+                <a href="gallery.htm">Gallery</a>
+                <a href="#">Regatta</a>
+                <a href="contact.htm">Contact Us</a>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <button type="button" class="btn btn-outline-dark btn-block tabs active" id="1" onclick="show(this.id)">
+                        Boat Club Managing Committee (BMC)
+                    </button>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <button type="button" class="btn btn-outline-dark btn-block tabs" id="2" onclick="show(this.id)">
+                        Faculty Advisors
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron text-center bg-white committee" id="content-1">
+            <br>
+            <span class="header">Boat Club Managing Committee for 2020-21</span><br><br>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 77985 10007</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Hitesh Parihar</span><br>
+                        General Secretary
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 77987 95469</span>
+                        <img src="images/committee/auditor.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Aaditya Bahadkar</span><br>
+                        Senior Auditor
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 98231 40139</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Raibbhann Sarnobbat</span><br>
+                        Rowing Secretary
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 91727 27481</span>
+                        <img src="images/committee/kayakcanoesec.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Tejas Ranka</span><br>
+                        Kayaking & Canoeing Secretary
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 90752 68966</span>
+                        <img src="images/committee/puntsec.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Roshan Warade</span><br>
+                        Punt Secretary
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 88067 00599</span>
+                        <img src="images/committee/tmsec.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Yashodeep Kandalkar</span><br>
+                        Telematches Secretary
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 96237 69412</span>
+                        <img src="images/committee/mdsec.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Nishikant Kandhare</span><br>
+                        Mashaal Dance Secretary
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 80553 31762</span>
+                        <img src="images/committee/gymsec.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Neel Mehta</span><br>
+                        Gym Secretary
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 72497 24818</span>
+                        <img src="images/committee/ladiesrep1.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Kalyani Kar</span><br>
+                        Ladies Representative
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 93079 17095</span>
+                        <img src="images/committee/ladiesrep2.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Sakshi Wakchaure</span><br>
+                        Ladies Representative
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 76208 76679</span>
+                        <img src="images/committee/jalmaitrico.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Shreyash Gaikwad</span><br>
+                        Jalmaitri Coordinator
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 96579 86566</span>
+                        <img src="images/committee/tykr.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Mayur Gaikwad</span><br>
+                        TY Kayaking Representative
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 91466 77475</span>
+                        <img src="images/committee/tyrr.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Digvijay Desai</span><br>
+                        TY Rowing Representative
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 87969 93982</span>
+                        <img src="images/committee/sykr.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Pranav Kapile</span><br>
+                        SY Kayaking Representative
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Anway Pimpalkar</span><br>
+                        SY Rowing Representative
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 82378 07792</span>
+                        <img src="images/committee/designmedia.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Nikhila Pushadapu</span><br>
+                        Design & Media
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 95119 09611</span>
+                        <img src="images/committee/webdev.jpg" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Ashwin Kulkarni</span><br>
+                        Web Development<br>
+                        <span class="mail">kulkarniam17.elec@coep.ac.in</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron text-center bg-white committee" id="content-2">
+            <br>
+            <span class="header">Faculty Advisors for BMC</span><br><br>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Name</span><br>
+                        Post
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Name</span><br>
+                        Post
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Name</span><br>
+                        Post
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Name</span><br>
+                        Post
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Name</span><br>
+                        Post
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="overlay">
+                        <span class="contact-no">Contact no.<br>+91 12345 67890</span>
+                        <img src="images/committee/img_avatar.png" alt="Card image" style="width: 100%; border-radius: 5%;">
+                    </div>
+                    <p class="text-left" style="margin-left: 10%;">
+                        <span class="name">Name</span><br>
+                        Post
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="social">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    Address:<br>
+                    College of Engineering Pune<br>
+                    Wellesly Road, Shivajinagar<br>
+                    Pune, Maharashtra - 411005
+                </div>
+                <div class="col-md-4 text-center"><br>
+                    Follow us on:<br><br>
+                    <a href="#" class="fa fa-facebook"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="https://www.instagram.com/coepboatclub/" class="fa fa-instagram"></a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="images/bclogo.png" style="width: 40%; background-color: white;">
+                </div>
+            </div>
+        </div><br><br>
+    
+        <div class="container-fluid footer text-center">
+            &copy; 2021 COEP Boat Club. Site developed by BMC Web Development Team
+        </div>
+
+        <button type="button" class="top-btn" onclick="goToTop()">^</button>
+
+    </body>
+</html>

@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?coepboatclub.com
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+--------------------------------------
+DirectoryIndex home.html

@@ -1,0 +1,263 @@
+.dashboard {
+    /* dashboard style */
+    font-family: 'Tahoma';
+    font-size: 16px;
+    background-color: #23395d;
+    padding-top: 10px;
+    position: relative;
+}
+
+.current {
+    /* styling for active link in dashboard */
+    background-color: #152238;
+}
+
+.col-xl-1 {
+    /* dashboard link */
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.col-xl-1:hover {
+    background-color: #152238;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.logo {
+    /* BC logo style */
+    background-color: #FFFFFF;
+    background-color: white;
+    width: 50%;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.dash-link {
+    /* Dropdown link */
+    color: white;
+}
+
+.dash-link:hover {
+    color: white;
+}
+
+.fadeIn {
+    -o-animation-name: fadeIn;
+    -o-animation-duration: 1s;
+    -o-animation-timing-function: linear;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: fadeIn;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-fill-mode: forwards;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+    0%  {opacity: 0;}
+    25% {opacity: 0.25;}
+    50% {opacity: 0.5;}
+    75% {opacity: 0.75;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    0%  {opacity: 0;}
+    25% {opacity: 0.25;}
+    50% {opacity: 0.5;}
+    75% {opacity: 0.75;}
+    100% {opacity: 1;}
+}
+
+.hr {
+    background-color: white;
+    opacity: 0.4;
+    width: 70%;
+}
+
+.sticky {
+    /* to fix the dashboard on scroll */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.top-btn {
+    /* for the go to top button */
+    font-weight: 500;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#bar {
+    /* bar for full nav */
+    color: #ffffff;
+    margin-top: 25px;
+    font-size: 50px;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    top: 50px;
+    right: 50px;
+}
+
+.full-nav {
+    /* full screen navigation window */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: #23395d;
+    z-index: 1;
+    overflow: auto;
+    display: none;
+    -webkit-transition: 0.5s;
+    -webkit-animation-name: slideLeft;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-duration: 0.3s;
+    -moz-transition: 0.5s;
+    -moz-animation-name: slideLeft;
+    -moz-animation-timing-function: linear;
+    -moz-animation-fill-mode: forwards;
+    -moz-animation-duration: 0.3s;
+    -o-transition: 0.5s;
+    -o-animation-name: slideLeft;
+    -o-animation-timing-function: linear;
+    -o-animation-fill-mode: forwards;
+    -o-animation-duration: 0.3s;
+    transition: 0.5s;
+    animation-name: slideLeft;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+}
+
+@-webkit-keyframes slideLeft {
+    /* left sliding animation for full screen navigation */
+    0% {width: 0;}
+    25% {width: 25%;}
+    50% {width: 50%;}
+    75% {width: 75%;}
+    100% {width: 100%;}
+}
+
+@keyframes slideLeft {
+    /* left sliding animation for full screen navigation */
+    0% {width: 0;}
+    25% {width: 25%;}
+    50% {width: 50%;}
+    75% {width: 75%;}
+    100% {width: 100%;}
+}
+
+.full-nav a {
+    color: white;
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.nav-content {
+    top: 25%;
+    position: relative;
+}
+
+#closebtn {
+    /* closing the navigation window */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    hr, .dashboard .row {
+        /* remove dashboard */
+        display: none;
+    }
+
+    .logo {
+        /* change size of logo */
+        margin-left: 0;
+        max-width: 150px;
+        width: 30%;
+        padding-bottom: 10px;
+    }
+
+    #bar {
+        /* display bar icon */
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #bar {
+        margin-top: 15px;
+    }
+}
+
+#social {
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding: 25px;
+}
+
+.fa {
+    color: white;
+}
+
+.fa:hover {
+    text-decoration: none;
+    color: white;
+    -o-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.footer {
+    background-color: #23395d;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    #social {
+        font-size: 15px;
+        padding: 19px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+
+    #bar {
+        top: 35px;
+    }
+}

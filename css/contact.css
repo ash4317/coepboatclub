@@ -1,0 +1,15 @@
+.mapouter {
+    overflow:hidden;
+    height:350px;
+    width:100%;
+}
+
+.gmap_canvas {
+    background:none!important;
+    height:350px;
+    width:100%;
+}
+
+.col-lg-6 {
+    font-size: 20px;
+}

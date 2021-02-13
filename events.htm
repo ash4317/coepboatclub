@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>COEP Boat Club | Events</title>
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--My own CSS-->
+        <link rel="stylesheet" href="css/common_style.css">
+        <link rel="stylesheet" href="css/events.css">
+        <!--Bootstrap JS-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <style>
+        .logo {
+            background-color:white; width: 50%; max-width: 200px;
+        }
+        
+        @media screen and (max-width: 1200px) {
+            .logo {
+                /* change size of logo */
+                max-width: 150px;
+                width: 30%;
+            }
+
+            .dashboard {
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        window.addEventListener('scroll', fixDashboard);
+        window.addEventListener('scroll', addTopBtn);
+        
+        function addTopBtn() {
+            var scroll = document.documentElement.scrollTop;
+            var btn = document.querySelector(".top-btn");
+            if(scroll > 20) {
+                btn.style.opacity = "1";
+            }
+            else {
+                btn.style.opacity = "0";
+            }
+        }
+        
+        function goToTop() {
+            document.documentElement.style.scrollBehavior = "smooth";
+            document.documentElement.scrollTop = 0;
+        }
+        
+        function fixDashboard() {
+            var scroll = document.documentElement.scrollTop;
+            z = document.querySelector(".row");
+            if (scroll >= 201) {
+                z.classList.add("sticky")
+            }
+            else {
+                z.classList.remove("sticky");
+            }
+        }
+        
+        function saveOffset() {
+            var offset = document.querySelector(".col-xl-1").offsetTop;
+            localStorage.setItem("dashboard_top", offset);
+        }
+        
+        function showNav() {
+            document.querySelector(".full-nav").style.display = "block";
+        }
+        
+        function closeNav() {
+            document.querySelector(".full-nav").style.display = "none";
+        }
+    </script>
+    
+    </head>
+
+    <body style="overflow-x: hidden;">
+
+        <!-- Dashboard -->
+        <nav class="container-fluid dashboard text-light" style="padding-top: 20px;">
+            <a href="home.html"><img class="logo" src="images/bclogo.png"></a>
+            <span id="bar" onclick="showNav()">&#8801;</span>
+            <hr class="hr">
+            <div class="row" style="background-color: #23395d; z-index: 1;">
+                <div class="col-xl-2 text-center"></div>
+                <div class="col-xl-1 text-center">
+                    <a href="home.html" class="dash-link">
+                    HOME
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="sports.htm" class="dash-link">
+                    SPORTS
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center current">
+                    <a href="events.htm" class="dash-link">
+                    EVENTS
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="ikcc.htm" class="dash-link">
+                    IKCC                    
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="commitee.htm" class="dash-link">
+                    COMMITTEE
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="gallery.htm" class="dash-link">
+                    GALLERY                   
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="#" class="dash-link">
+                    REGATTA
+                    </a>
+                </div>
+                <div class="col-xl-1 text-center">
+                    <a href="contact.htm" class="dash-link">
+                    CONTACT US
+                    </a>
+                </div>
+                <div class="col-xl-2 text-center"></div>
+            </div>
+        </nav>
+
+        <div class="full-nav text-center">
+            <span id="closebtn" onclick="closeNav()">&times;</span>
+            <div class="nav-content">
+                <a href="home.html">Home</a>
+                <a href="sports.htm">Sports</a>
+                <a href="events.htm" class="current">Events</a>
+                <a href="ikcc.htm">IKCC</a>
+                <a href="commitee.htm">Committee</a>
+                <a href="gallery.htm">Gallery</a>
+                <a href="#">Regatta</a>
+                <a href="contact.htm">Contact Us</a>
+            </div>
+        </div><br>
+
+        <div class="container event" id="moon-punt">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="header">Moonlight Punting</span>
+                    <div class="content">
+                        Moonlight Punting is held on the occasion of "Kojagiri Purnima" (Full Moon). Everyone is given a chance to ride a punt in the dimly lit waters of the Mula river.<br>Under the beautiful Full Moon and with the company of friends, this event is enjoyed by many students of COEP. It is concluded by providing everyone with the traditional Masala Doodh - enjoyed as a refreshment on Kojagiri.<br>                            
+                        <br><br>
+                        <span class="name">Abcd</span><br>
+                        <span class="post">Punt Secretary</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="images/moon.webp" id="moon">
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container event" id="gym">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="header">Khande Navami & Gym Competition</span>
+                    <div class="content">
+                        On the occasion of "Khande Navami" (9th day of Navaratri), all the boats are washed which makes them look as good as new!<br>
+                        The Gym competition is also held where everyone can witness the strength, endurance and stamina of various people as they take part in this competition. A variety of rounds consisting of push-ups, bench press, squats, plank, power circuit etc. are held and the winners are given exciting prizes. <br>
+                        The cheering from the audience and the sheer will of the participants makes this a breathtaking event.
+                        <br><br>
+                        <span class="name">Neel Mehta</span><br>
+                        <span class="post">Gym Secretary</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="images/gym.jfif" id="gym-photo">
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container event" id="deepotsav">
+            <span class="header">Deepotsav</span>
+            <div class="content">
+                On this occasion, the Boat Club is decorated with "Diyas" to have a glimpse of the festival of Diwali.<br>
+                Every corner is lit with diyas and there isn't a single spot of darkness. Everybody enjoys this sight with laughter and joy as they realise how amazing our boat club really is.<br>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <img src="images/IMG_5494.jpg" class="deep-photo">
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/IMG_5479.jpg" class="deep-photo" style="margin-top: 30px;">
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container event" id="jalmaitri">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="header">Jalmaitri</span>
+                    <div class="content">
+                        Jalmaitri yatra is a journey from the origin of Mutha river to the COEP Boat Club. Its aim is "to create a sense of awareness among the citizens of Pune regarding the risks involving water pollution". Various competitions like poster making, street plays etc. are arranged which deliver the message of problems related to water pollution.<br>
+                        Jalmaitri Water Camp is also organized by COEP Boat Club. Many students take part in this water camp which is held during Makar Sankranti. After this camp students start practicing for the prestigious annual event - Regatta!
+                        <br><br>
+                        <span class="name">Shreyas Gaikwad</span><br>
+                        <span class="post">Jalmaitri Coordinator</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="images/jalmaitri1.jpg" class="jalmaitri-photo"><br><br>
+                    <img src="images/jalmaitri2.jpg" class="jalmaitri-photo" style="margin-bottom: 20px;">
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container-fluid" id="social">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    Address:<br>
+                    College of Engineering Pune<br>
+                    Wellesly Road, Shivajinagar<br>
+                    Pune, Maharashtra - 411005
+                </div>
+                <div class="col-md-4 text-center"><br>
+                    Follow us on:<br><br>
+                    <a href="#" class="fa fa-facebook"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="images/bclogo.png" style="width: 40%; background-color: white;">
+                </div>
+            </div>
+        </div><br><br>
+    
+        <div class="container-fluid footer text-center">
+            &copy; 2021 COEP Boat Club. Site developed by BMC Web Development Team
+        </div>
+
+        <button type="button" class="top-btn" onclick="goToTop()">^</button>
+    </body>
+
+</html>

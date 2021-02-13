@@ -1,0 +1,26 @@
+.ikcc-info {
+    font-size: 20px;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 365px) {
+    h4 {
+        font-size: 20px;
+    }
+
+    .ikcc-info .col-xl-4 {
+        font-size: 15px;
+    }
+}
+
+@keyframes fadeIn {
+    0%  {opacity: 0;}
+    25% {opacity: 0.25;}
+    50% {opacity: 0.50;}
+    75% {opacity: 0.75;}
+    100%  {opacity: 1;}
+}
